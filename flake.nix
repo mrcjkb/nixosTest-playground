@@ -27,6 +27,10 @@
         ...
       }: let
         pkgs = nixpkgs.legacyPackages.${system};
+
+        # nixosTests
+        basic = pkgs.callPackage ./basic {};
+        client-server = pkgs.callPackage ./client-server {};
       in {
         devShells.default = pkgs.mkShell {
           name = "nix devShell";
@@ -37,8 +41,19 @@
           ];
         };
 
+        packages = {
+          default = basic;
+          inherit
+            basic
+            client-server
+            ;
+        };
+
         checks = {
-          basic = pkgs.callPackage ./nix/basic.nix {};
+          inherit
+            basic
+            client-server
+            ;
         };
       };
     };
