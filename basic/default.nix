@@ -1,11 +1,17 @@
-{nixosTest}:
+{
+  nixosTest,
+  curl,
+}:
 nixosTest {
   name = "basic-nixosTest";
   nodes.machine = {
-    services.zookeeper = {
+    services.gitea = {
       enable = true;
-      port = 2182;
     };
+
+    environment.systemPackages = [
+      curl
+    ];
   };
   testScript =
     /*
@@ -14,7 +20,7 @@ nixosTest {
     ''
       machine.start()
       machine.wait_for_unit("multi-user.target")
-      machine.wait_for_open_port(2182)
-      machine.succeed("curl localhost:2182")
+      machine.wait_for_open_port(3000)
+      machine.succeed("curl localhost:3000")
     '';
 }
