@@ -36,6 +36,10 @@
             alejandra
           ];
         };
+
+        checks = {
+          basic = pkgs.callPackage ./nix/basic-nixosTest.nix {};
+        };
       };
     };
 }
