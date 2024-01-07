@@ -38,7 +38,7 @@
         };
 
         checks = {
-          basic = pkgs.callPackage ./nix/basic-nixosTest.nix {};
+          basic = pkgs.callPackage ./nix/basic.nix {};
         };
       };
     };
