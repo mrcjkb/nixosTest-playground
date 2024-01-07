@@ -4,4 +4,9 @@ A playground for [`nixosTest`](https://nixos.org/manual/nixos/stable/index.html#
 
 
 
+## Credit:
+
+- [@NorfairKing](https://github.com/NorfairKing)
+
+
 
