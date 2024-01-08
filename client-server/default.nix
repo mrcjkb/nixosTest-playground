@@ -5,7 +5,7 @@
 nixosTest {
   name = "client/server test";
   nodes = {
-    server = {
+    server = {...}: {
       services.nginx = {
         enable = true;
         virtualHosts = {
@@ -25,7 +25,7 @@ nixosTest {
         allowedTCPPorts = [8080];
       };
     };
-    client = {
+    client = {...}: {
       environment.systemPackages = [
         curl
       ];

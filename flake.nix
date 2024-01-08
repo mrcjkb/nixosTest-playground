@@ -31,6 +31,7 @@
         # nixosTests
         basic = pkgs.callPackage ./basic {};
         client-server = pkgs.callPackage ./client-server {};
+        kafka = pkgs.callPackage ./kafka {};
       in {
         devShells.default = pkgs.mkShell {
           name = "nix devShell";
@@ -46,6 +47,7 @@
           inherit
             basic
             client-server
+            kafka
             ;
         };
 
@@ -53,6 +55,7 @@
           inherit
             basic
             client-server
+            kafka
             ;
         };
       };

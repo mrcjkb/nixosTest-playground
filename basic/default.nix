@@ -4,7 +4,7 @@
 }:
 nixosTest {
   name = "basic-nixosTest";
-  nodes.machine = {
+  nodes.machine = {...}: {
     services.gitea = {
       enable = true;
     };

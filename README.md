@@ -23,7 +23,7 @@ nix run .#<package>.driverInteractive
 
 ## Credit:
 
-- [@NorfairKing](https://github.com/NorfairKing)
+- [@NorfairKing](https://github.com/NorfairKing) for basic and client-server examples.
 
 
 
