@@ -9,7 +9,7 @@ nixosTest {
       services.nginx = {
         enable = true;
         virtualHosts = {
-          "codefreeze.fi" = {
+          "tiko.ch" = {
             root = ./webroot;
             listen = [
               {
