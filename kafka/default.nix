@@ -69,7 +69,7 @@ nixosTest {
           + "--replication-factor 1 --topic testtopic"
       )
 
-      publisher.succeed("echo 'Hello codefreeze!' | kcat -b kafka:9092 -t testtopic")
-      assert "Hello codefreeze!" in subscriber.succeed("kcat -C -b kafka:9092 -c 1 -t testtopic")
+      publisher.succeed("echo 'Hello world!' | kcat -b kafka:9092 -t testtopic")
+      assert "Hello world!" in subscriber.succeed("kcat -C -b kafka:9092 -c 1 -t testtopic")
     '';
 }
